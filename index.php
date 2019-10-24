@@ -39,7 +39,7 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">งานต่าง ๆ</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about"></a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./admin/index.php">Login</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact"></a>
@@ -120,31 +120,6 @@
   
       </div>
     </section>
-
-    <!-- member -->
-    <section>
-    <!-- Left Sidebar -->
-    <?php include('login.php'); ?>
-          <!-- #END# Left Sidebar -->
-    </section>
-    
-    <section class="content">
-        <div class="container-fluid">
-   <?php 
-   if($_GET['service']==''){
-					include('inc/main.php');
-				}else {
-					if(!@include(''.$_GET['floder'].'/'.$_GET['service'].'.php')){
-						include_once("inc/error.php");
-										}
-										}
-   ?>
-
-        </div>
-
-		
-        </section>
-  
 
   <!-- Portfolio Section -->
   <section class="page-section portfolio" id="portfolio">
