@@ -1,18 +1,4 @@
 ﻿
-<?php
-if(!empty($_SESSION['lalom_cid'])){
-} else{
-echo "<META HTTP-EQUIV=Refresh content=0;URL=index.php?floder=inc&service=login>"; 
-exit();
-} 
-$input_type = $_GET['input_type'];
-if($input_type==2) {
-$input_type_text = "<h4>เลือกการบันทึกผลการวิเคราะห์เครื่องวัดองค์ประกอบร่างกาย (Inner Scan)</h4>";
-}else if ($input_type==3) {
-$input_type_text = "<h4>เลือกการบันทึกแบบประเมินพฤติกรรมสุขภาพ</h4>";
-}
-include "ajax/mod11x.php";
-?>
 		<link type="text/css" href="datepicker_buddhist_year/css/ui-lightness/jquery-ui-1.8.10.custom.css" rel="stylesheet" />	
 		<script type="text/javascript" src="datepicker_buddhist_year/js/jquery-1.4.4.min.js"></script>
 		<script type="text/javascript" src="datepicker_buddhist_year/js/jquery-ui-1.8.10.offset.datepicker.min.js"></script>
@@ -23,185 +9,61 @@ include "ajax/mod11x.php";
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <div class="header">
-                            <h3>รายละเอียดเก็บข้อมูลสุขภาพเบื้องต้น</h3>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+
 						 <div class="header">
-						  <h3>1.ข้อมูลทั่วไป <?=$input_type_text; ?></h3>
+						  <h3>ข่าวประชาสัมพธ์และอัพเดทเอกสาร </h3>
 						 </div>
                         <div class="body">
                          <form name="input" action="index.php?floder=ajax&service=Add_Get_Person" method="POST">
-						<label for="cid">ค้นหาบุคคลจากหมายเลขบัตรประชาชน</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="cfname">ค้นหาบุคคลจาก ชื่อ - นามสกุล</label>	
-						 <div class="row clearfix">
-                                <div class="col-md-4">
-
-                                <div class="form-group">
-                                    <div class="form-line">
-                                    <input name="input_type" type="hidden" value="<?=$input_type; ?>" />
-            <input type="text" id="cid" name="cid" class="form-control" onblur="CheckIDCardxxx(cid);" onkeyup="GetPerson();" placeholder="13 หลัก" required="required">
-                                    </div>
-									 <!-- <input type="button"  class="btn btn-primary"value="GEN หมายเลขบัตร กรณีไม่ทราบเลขบัตร" onclick="GMM();" /> -->
-                                </div>
-								</div>
-	
-									
-								
-                                <div class="col-md-4">
-  
-                                <div class="form-group">
-                                    <div class="form-line">
-            <input type="text" id="cfname" name="cfname" class="form-control"  placeholder="ชื่อ - สกุล" >
-                                    </div>
-                                </div>
-								</div>
-								
-								 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <button type="button" id="getperson" onclick="GetPerson2();" class="btn bg-indigo waves-effect"><i class="material-icons">check_box</i>
-<span>ตรวจสอบจากฐานข้อมูลโดยชื่อ</span></button>
-                                    </div>
-
-								</div>
-
-                           
-                               
+            
                                 <fieldset>
-                                    <div class="form-group form-float">
-								<div class="row clearfix">
-								<div class="col-md-3">
-                                    <p>
-                                        <b>คำหน้านาม</b>
-                                    </p>
-                                                           
-                                       
-                                             <select class="form-control show-tick" id="prename" name="prename" data-live-search="true" required="required">
-                                       <option value="">เลือก</option>
-																  <?
-	$sql_race= "SELECT
-c.id_prename,
-c.prename,
-c.detail
-FROM hdc.cprename c WHERE c.id_prename in ('001','002','003','004','005')";
-	$query_race = mysqli_query($hdc,$sql_race) or die ("Error Query [".$strSQL."]");
-	while($obj_race = mysqli_fetch_array($query_race))
-	{
-	?>
+                                <div class="form-group form-float">
+                                    <div class="row clearfix">
+                                            <div class="col-md-3">
+                                                <p>
+                                                    <b>งาน</b>
+                                                </p>
+                                                <div class="input-group input-group-lg">                                      
+                                                    <div class="form-line">
+                                                        <input type="text" id="fname" name="fname" class="form-control" placeholder="" required="required">
+                                                    </div>
+                                                </div>
+                                            </div>
 
-       <option  value="<?=$obj_race["id_prename"];?>"><?=$obj_race["prename"];?></option>
-      <?
-	}
-	?>
-                                    </select> 
- 
-                                </div>
-                                <div class="col-md-3">
-                                    <p>
-                                        <b>ชื่อ</b>
-                                    </p>
-                                    <div class="input-group input-group-lg">                                      
-                                        <div class="form-line">
-                                            <input type="text" id="fname" name="fname" class="form-control" placeholder="" required="required">
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <p>
-                                        <b>นามสกุล</b>
-                                    </p>
-                                    <div class="input-group input-group-lg">                                      
-                                        <div class="form-line">
-                                            <input type="text" id="lname" name="lname" class="form-control" placeholder="" required="required">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <p>
-                                        <b>เพศ</b>
-                                 <select class="form-control show-tick" id="sex" name="sex" data-live-search="true" required="required">
-                                        <option value="1">ชาย</option>
-                                        <option value="2">หญิง</option>
-                                    </select> 
-                            </div>
-							
-                                       </div>
+                             
 									   <!-- row 2 -->
-						<div class="row clearfix">
-                                <div class="col-md-4">
-                                    <p>
-                                        <b>วันเกิด</b>
-                                    </p>
-                                <div class="input-group "> 
-                                        <div class="form-group">
-                                         <div class="form-line">
-                                          <input type="text" class="form-control" size="10" id="birth" name="birth" />
-</div>
-</div>
- <span class="input-group-addon">
-                                            <i class="material-icons">date_range</i>
-                                        </span>
-                                        </div>
-                                       
-                                       
+                                    <div class="row clearfix">
+                                            <div class="col-md-12">
+                                                <p>
+                                                    <b>รายละเอียด</b>
+                                                </p>
+                                                <div class="input-group input-group-lg">                                      
+                                                    <div class="form-line">
+                                                        <input type="text" id="fname" name="fname" class="form-control" placeholder="" required="required">
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </div>
-                    <div class="col-md-5">
-                                    <p>
-                                        <b>อาชีพ</b>
-                                    </p>
-                                 <select class="form-control " id="occ" name="occ" data-live-search="true" >
-                                       <option value="">เลือก</option>
-																  <?
-	$sql_race= "SELECT
-c.occupationcode,
-c.occupationname
-FROM coccupation c";
-	$query_race = mysqli_query($con,$sql_race) or die ("Error Query [".$strSQL."]");
-	while($obj_race = mysqli_fetch_array($query_race))
-	{
-	?>
-       <option  value="<?=$obj_race["occupationcode"];?>"><?=$obj_race["occupationname"];?></option>
+                                    <!-- row 3 -->
+                                    <div class="row clearfix">
+                                            <div class="col-md-6">
+                                                <p>
+                                                    <b>อัพโหลดเอกสาร</b>
+                                                </p>
+                                                <div class="input-group input-group-lg">                                      
+                                                    <div class="form-line">
+                                                        <input type="text" id="fname" name="fname" class="form-control" placeholder="" required="required">
+                                                    </div>
+                                                </div>
+                                            </div>
 
-      <?
-	}
-	?>
-                                    </select> 
-                            </div>
-                             <div class="col-md-3">
-                                    <p>
-                                        <b>ประเภท</b>
-                                    </p>
-                                 <select class="form-control " id="member_type_id" name ="member_type_id" data-live-search="true" required="required">
-																  <?
-	$sql_race= "SELECT
-m.member_type_id,
-m.member_type_name
-FROM bmi_trends.member_type m #where m.member_type_id in (1)";
-	$query_race = mysqli_query($con,$sql_race) or die ("Error Query [".$strSQL."]");
-	while($obj_race = mysqli_fetch_array($query_race))
-	{
-	?>
-       <option  value="<?=$obj_race["member_type_id"];?>"><?=$obj_race["member_type_name"];?></option>
-
-      <?
-	}
-	?>
-                                    </select> 
-                            </div>   
+                                    </div>
+  
                             
 <button type="submit" class="btn  bg-red waves-effect pull-right"> <i class="material-icons">save</i>บันทึกเพื่อไปข้อถัดไป</button>							
-                                       </div>
+                                     
 
-									   </div>
                                 </fieldset>
                             </form> 
                         </div>

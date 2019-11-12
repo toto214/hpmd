@@ -9,7 +9,7 @@ $rs = mysqli_query($con,$sql);
 $row=mysqli_fetch_array($rs);
 $count = mysqli_num_rows($rs);
 if($count>0){
-$_SESSION["lalom_cid"]=$row["cid"];
+$_SESSION["lalom_cid"]=$row["username"];
 $_SESSION["lalom_hospcode"]=$row["hospcode"];
 $_SESSION["lalom_internal_department_hr_id"]=$row["internal_department_hr_id"];
 $_SESSION["lalom_hostypegroup"]=$row["hostypegroup"];

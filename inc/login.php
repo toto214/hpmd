@@ -63,7 +63,7 @@
 							success: function(data){
 								if(data){
 									//alert(data);								
-									window.location.href = "index.php?floder=inc&service=hpmd_main"; 
+									window.location.href = "index.php?floder=inc&service=hpmd_update"; 
 	
 								//window.history.back(1);
 								

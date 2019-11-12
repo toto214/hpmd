@@ -34,7 +34,7 @@
                         </a>
                     </li>
                     <li <?php if(strpos($_GET['service'],'people_health') !== false ){ echo "class='active'";}    ?>>
-                        <a href="index.php?floder=inc&service=people_health_search">
+                        <a href="index.php?floder=inc&service=login">
                             <i class="material-icons" >directions_run</i>
                             <span>ข้อมูลตรวจสุขภาพเบื้องต้น</span>
                         </a>
