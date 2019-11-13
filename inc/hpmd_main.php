@@ -9,7 +9,7 @@
                     
                 </h1>
                 <h2>
-                    <p class = "text-center">กลุ่มงานส่งเสริมสุขภาพ สสจ.บุรีรัมย์</p>
+                    <p class = "text-center">กลุ่มงานส่งเสริมสุขภาพ สาธารณสุขจังหวัดบุรีรัมย์</p>
                 </h2>
             </div>
         <div class="body" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >

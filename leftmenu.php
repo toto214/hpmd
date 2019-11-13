@@ -26,7 +26,7 @@
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
-                    <li class="header">เมนูสำหรับประชาชน</li>
+                    <li class="header">MENU</li>
                     <li >
                         <a href="index.php">
                             <i class="material-icons">home</i>
@@ -34,9 +34,9 @@
                         </a>
                     </li>
                     <li <?php if(strpos($_GET['service'],'people_health') !== false ){ echo "class='active'";}    ?>>
-                        <a href="index.php?floder=inc&service=login">
-                            <i class="material-icons" >directions_run</i>
-                            <span>ข้อมูลตรวจสุขภาพเบื้องต้น</span>
+                        <a href="index.php?floder=inc&service=hpmd_main">
+                            <i class="material-icons" >description</i>
+                            <span>ข่าวทั้งหมด</span>
                         </a>
                     </li>
 
@@ -70,29 +70,11 @@
                     <? } else { ?>
                     <li  <?php if(strpos($_GET['input_type'],'2') !== false ){ echo "class='active'";}    ?>>
                         <a href="index.php?floder=inc&service=input_person&input_type=2">
-                            <i class="material-icons col-amber">input</i>
-                            <span>บันทึกข้อมูลการวิเคราะห์ร่างกาย</span>
+                            <i class="material-icons col-amber">add</i>
+                            <span>เพิ่มข่าวประชาสัมพันธ์</span>
                         </a>
                     </li>
-					                    <li  <?php if(strpos($_GET['input_type'],'3') !== false ){ echo "class='active'";}    ?>>
-                        <a href="index.php?floder=inc&service=input_person&input_type=3">
-                            <i class="material-icons col-purple">input</i>
-                            <span>บันทึกข้อมูลพฤติกรรมสุขภาพ</span>
-                        </a>
-                    </li>
-			<li <?php if(strpos($_GET['service'],'user_manager') !== false ){ echo "class='active'";}    ?>>
-                       <a href="index.php?floder=inc&service=user_manager">
-                            <i class="material-icons col-light-blue">group</i>
-                            <span>จัดการผู้ใช้งาน APPLICATION</span>
-                        </a>
-                    </li>
-					
-				<li <?php if(strpos($_GET['service'],'visit_manager') !== false ){ echo "class='active'";}    ?>>
-                       <a href="index.php?floder=inc&service=visit_manager">
-                            <i class="material-icons col-deep-orange">receipt</i>
-                            <span>จัดการข้อมูลที่บันทึก</span>
-                        </a>
-                    </li>
+					    
 					<!--
                     <li>
                         <a href="javascript:void(0);">

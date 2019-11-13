@@ -89,11 +89,11 @@ include "connect/thai_date.php";
 <?php include('header.php'); ?>
     <!-- #Top Bar -->
     
-    <section>
+    <!--<section> -->
     <!-- Left Sidebar -->
-    <?php include('leftmenu.php'); ?>
+    <?php include('leftmenu.php'); ?> 
           <!-- #END# Left Sidebar -->
-    </section>
+   <!-- </section>-->
     
     <section class="content">
         <div class="container-fluid">

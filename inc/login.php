@@ -48,7 +48,7 @@
     
                  
             
-            <script>
+<script>
 				function AjaxLogin(){
 					var username = $("#username").val();
    					var password = $("#password").val();
@@ -63,7 +63,7 @@
 							success: function(data){
 								if(data){
 									//alert(data);								
-									window.location.href = "index.php?floder=inc&service=hpmd_update"; 
+									window.location.href = "index.php?floder=inc&service=main"; 
 	
 								//window.history.back(1);
 								
@@ -83,5 +83,3 @@
 					$("#password").val("");
 				}
 			</script>
-            
-
