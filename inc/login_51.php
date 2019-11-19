@@ -1,4 +1,4 @@
-<div class="login-page">
+  <div class="login-page">
   <div class="login-box">
         <div class="card">
             <div class="body">
@@ -55,7 +55,7 @@
 					if(username !="" && password !="" ){
 						$.ajax({
 							type: "POST",
-							url: "ajax/aj_login.php",
+							url: "ajax/AjaxLogin.php",
 							data: "username="+username
 							+"&password="+password,
 						
@@ -63,7 +63,7 @@
 							success: function(data){
 								if(data){
 									//alert(data);								
-									window.location.href = "index.php?floder=inc&service=admin_page"; 
+									window.location.href = "index.php?floder=inc&service=main"; 
 	
 								//window.history.back(1);
 								

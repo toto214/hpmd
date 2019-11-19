@@ -68,7 +68,7 @@
                         </a>
                     </li>
                     <? } else { ?>
-                    <li  <?php if(strpos($_GET['input_type'],'2') !== false ){ echo "class='active'";}    ?>>
+                    <li  <?php if(strpos($_GET['username'],'test1') !== false ){ echo "class='active'";}    ?>>
                         <a href="index.php?floder=inc&service=input_person&input_type=2">
                             <i class="material-icons col-amber">add</i>
                             <span>เพิ่มข่าวประชาสัมพันธ์</span>
